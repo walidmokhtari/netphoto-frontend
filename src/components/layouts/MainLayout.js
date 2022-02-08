@@ -17,7 +17,13 @@ const MainLayout = ({children}) => {
             </Head>
             <header className={styles.header__main}>
                 <HeaderLogo/>
-                <Button value="S'authentifier" href="/login"/>
+                {
+                    children.type.name == "Home" ? (
+                        <Button value="S'identifier" href="/login"/>
+                    )
+                    :
+                    ""
+                }
             </header>
             <main>
                 {children}

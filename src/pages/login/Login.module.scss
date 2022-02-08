@@ -1,0 +1,66 @@
+.div__login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.452),rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.418)), url(https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png) no-repeat ;
+    background-size: cover;
+ 
+}
+
+.div__card {
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.808);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    border-radius: 5px;
+    h1 {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    ::placeholder{
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .div__textFirstConnection {
+        margin-top: 20px;
+        color: rgb(133, 131, 131);
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+}
+
+.input__submit {
+    width: 71%;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background-color: #e50914;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 0.7s ease;
+}
+
+.div__help {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+

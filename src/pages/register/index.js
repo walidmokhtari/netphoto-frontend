@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import styles from './Register.module.scss';
 import TitlePage from '../../components/UI/TitlePage/TitlePage';
 import Input from '../../components/UI/Input/Input';
+import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
 import authService from '../../services/auth.service';
 
 function Register(props) {
@@ -17,11 +18,15 @@ function Register(props) {
             .then((data) => {
                 if (data.message) {
                     setError(true);
-                    setErrorMessage(data.message);
+                    if (data.message) {
+                        setErrorMessage("Email déja existant");
+                        return false;
+                    }
+                    setErrorMessage(data);
                     return false;
                 }
                 localStorage.setItem("token", data.token);
-                router.push("/account/profil");
+                router.push("/account");
             })
             .catch((err) => {
                 console.log(err);
@@ -86,10 +91,10 @@ function Register(props) {
 
                     {
                     error ? (
-                        errorMessage
+                        <ErrorMessage message = {errorMessage} />
                     )
                     :
-                     "" 
+                    "" 
                     }
             </form>
         </div>

@@ -6,12 +6,12 @@ const Input = (props) => {
         <>
         <label>{props.label}</label>
         <input
-            className={styles.input__register}
+            className={styles.input__}
             type={props.type}
             name={props.name}
             id={props.id}
             value={props.value}
-            placeholder={props.placehoder}
+            placeholder={props.placeholder}
             required={props.required}
             onChange={props.onChange}      
         />

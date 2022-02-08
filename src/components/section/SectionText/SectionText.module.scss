@@ -4,13 +4,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: url(https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.89),rgba(0, 0, 0, 0.582), rgba(0, 0, 0, 0.986)),url(https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png) no-repeat ;
     background-size: cover;
     padding-top: 150px;
 }
 
 .div__elements {
-    background-color: rgba(255, 255, 255, 0.377);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -18,6 +17,7 @@
 }
 
 .section__text {
+    color: white;
     font-weight: 600;
     h1 {
         margin-bottom: 30px;

@@ -1,0 +1,15 @@
+.div__account {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.div__account__movies {
+    background-color: green;
+}
+
+.div__account__info {
+    background-color: aqua;
+}

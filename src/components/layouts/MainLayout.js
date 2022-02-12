@@ -15,22 +15,10 @@ const MainLayout = ({children}) => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <header className={styles.header__main}>
-                <HeaderLogo/>
-                {
-                    children.type.name == "Home" ? (
-                        <Button value="S'identifier" href="/login"/>
-                    )
-                    :
-                    ""
-                }
-            </header>
             <main>
                 {children}
             </main>
-            <footer className={styles.footer__main}>
-                <Footer/>
-            </footer>
+            <Footer></Footer>
         </>
     )
 }

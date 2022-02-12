@@ -1,0 +1,37 @@
+.section__parent__details {
+    border-top: solid 1px #797979;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.div__details__left {
+    h1 {
+        font-weight: bold;
+        font-size: 20px;
+        color: rgb(107, 107, 107);
+    }
+}
+
+
+.div__parent_mr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 120px;
+    flex-grow: 1;
+    h1 {
+        font-weight: bold;
+        font-size: 23px;
+        color: rgb(107, 107, 107);
+    }
+
+    a {
+        font-weight: bold;
+        font-size: 23px;
+        color: rgb(38, 117, 207);
+    }
+}

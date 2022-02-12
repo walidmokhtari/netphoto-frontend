@@ -27,4 +27,13 @@ export default {
         })
         .then ((res) => res.json())
     },
+
+    verifyToken(token) {
+      return fetch('http://localhost:3001/api/v1/users/verify-token', {
+          headers: {
+              "authorization":token
+          }
+      })
+      .then(res => res.json())
+    },
 }

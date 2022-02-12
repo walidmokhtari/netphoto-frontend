@@ -3,6 +3,8 @@ import { useState } from 'react/cjs/react.development';
 import { useRouter } from "next/router";
 import authService from '../../services/auth.service';
 import styles from './Account.module.scss';
+import withAuth from '../../HOC/withAuth';
+import NavAccount from '../../components/navs/NavAccount/NavAccount';
 
 import { getMovies } from "../../graphql/queries/movies";
 import { useQuery } from "@apollo/react-hooks";
@@ -39,28 +41,12 @@ function Account(props) {
         return null;
     }
 
-    console.log(data);
-    console.log(user);
-
     return (
         <div className={styles.div__account}>  
-            <div className={styles.div__account__movies}>
-             {
-                 data.getMovies.map((movie) => (
-                     <div>
-                         {movie.title}
-                         {movie.description}
-                         {movie.type}
-                     </div>
-                 ))
-             }
-            </div>
-            <div className={styles.div__account__info}>
-                <p>{user.email}</p>
-                <a href="/account/profil"><p>{user.firstName}</p></a>
-            </div> 
+            <NavAccount type="Account"></NavAccount>
+            <div className={styles.test}></div>
         </div>
     );
 }
 
-export default Account;
+export default withAuth(Account);

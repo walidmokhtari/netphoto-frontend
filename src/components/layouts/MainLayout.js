@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from 'next/dist/server/router';
 import Head from "next/head";
-import HeaderLogo from "../header/HeaderLogo/HeaderLogo";
 import Button from "../UI/Button/Button";
 import styles from "./MainLayout.module.scss";
 import Footer from "../footer/Footer";

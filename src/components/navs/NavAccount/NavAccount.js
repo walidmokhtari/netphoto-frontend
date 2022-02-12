@@ -5,31 +5,33 @@ import './NavAccount.module.scss';
 import LogoImg from "../../../../public/logo.png";
 import Avatar from "../../../../public/avatar.png";
 import MenuIcon from '@material-ui/icons/Menu';
+import Button from "../../UI/Button/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import CardGiftcard from '@material-ui/icons/CardGiftcard';
 import Notifications  from "@material-ui/icons/Notifications";
 
 function NavAccount(props) {
-
+    
     const [navBlack, setNavBlack] = useState(false);
     const [buttonMenu, setButtonMenu] = useState(false);
 
-    const transitionNav  = () => {
-        window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
-    };
+    if (props.type == "Account" || props.type == "Profil") {
+        const transitionNav  = () => {
+            window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
+        };
 
-    useState(() => {
-        document.addEventListener("scroll", transitionNav);
-    });
+        useState(() => {
+            document.addEventListener("scroll", transitionNav);
+        });
 
-    const handleClick = () => {
-        buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
-    }
-
-    console.log(props.type);
+        const handleClick = () => {
+            buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
+        }
+    } 
+    
 
     return (
-        <div className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" ? styles.nav__black : ""} ${buttonMenu && styles.parent}`}>
+        <div className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" ? styles.nav__black : ""} ${buttonMenu && styles.parent} ${props.type == "Home" && styles.nav__fixed}`}>
             {
                 props.type == "Account" ?
                 <button className={styles.nav__button} onClick={handleClick}>
@@ -62,9 +64,21 @@ function NavAccount(props) {
                     :
                     ""
                 }
-                <a href="#" className={styles.nav__action}>
-                    <img src={Avatar.src} alt="Avatar"></img>
-                </a>
+                {
+                props.type == "Account" || props.type == "Profil" ?
+                    <a href="#" className={styles.nav__action}>
+                        <img src={Avatar.src} alt="Avatar"></img>
+                    </a>
+                    :
+                    ""
+                }
+                {
+                    props.type == "Home" ?
+                        <Button value="S'identifier" href="/login"></Button>
+                    :
+                        ""
+                }
+                
             </div>
         </div>
     );

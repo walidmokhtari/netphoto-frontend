@@ -6,6 +6,7 @@ import styles from './Account.module.scss';
 import withAuth from '../../HOC/withAuth';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
 import HeaderAccount from '../../components/header/HeaderAccount/HeaderAccount';
+import RowAccount from '../../components/rows/RowAccount/RowAccount';
 
 import { getMovies } from "../../graphql/queries/movies";
 import { useQuery } from "@apollo/react-hooks";
@@ -46,6 +47,11 @@ function Account(props) {
         <div className={styles.div__account}>  
             <NavAccount type="Account"></NavAccount>
             <HeaderAccount></HeaderAccount>
+            <RowAccount title="Tendances actuelles"></RowAccount>
+            <RowAccount title="Top 10 en France aujourd'hui"></RowAccount>
+            <RowAccount title="Films européens"></RowAccount>
+            <RowAccount title="Films d'actions"></RowAccount>
+            <RowAccount title="Documentaires"></RowAccount>
             <div className={styles.test}></div>
         </div>
     );

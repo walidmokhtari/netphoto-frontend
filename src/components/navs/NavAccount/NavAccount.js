@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import styles from './NavAccount.module.scss';
-import './NavAccount.module.scss';
 import LogoImg from "../../../../public/logo.png";
 import Avatar from "../../../../public/avatar.png";
 import MenuIcon from '@material-ui/icons/Menu';
@@ -27,9 +26,8 @@ function NavAccount(props) {
         const handleClick = () => {
             buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
         }
-    } 
+    };
     
-
     return (
         <div className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" ? styles.nav__black : ""} ${buttonMenu && styles.parent} ${props.type == "Home" && styles.nav__fixed}`}>
             {

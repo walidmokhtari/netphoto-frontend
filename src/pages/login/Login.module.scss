@@ -1,66 +1,120 @@
-.div__login {
+.div__body {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.452),rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.418)), url(https://miro.medium.com/max/1400/1*5lyavS59mazOFnb55Z6znQ.png) no-repeat ;
     background-size: cover;
- 
-}
 
-.div__card {
-    margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.808);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    border-radius: 5px;
-    h1 {
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-        margin-top: 20px;
-        margin-bottom: 30px;
+    .div {
+        background-color: rgba(0, 0, 0, 0.808);;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 23%;
+        border-radius: 4px;
+        padding-bottom: 50px;
+
+        h1 {
+            margin-top: 40px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-left: 48px;
+        }
+        &__form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            ::placeholder{
+                font-size: 13px;
+                color: rgb(150, 150, 150);
+                font-weight: normal;
+            }
+
+            .input__submit {
+                width: 75%;
+                height: 40px;
+                margin-top: 30px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                background-color: #e50914;
+                border: 1px solid black;
+                border-radius: 5px;
+                transition: 0.7s ease;
+            }
+        }
+
+        &__check {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 75%;
+            margin-top: 5px;
+            margin-left: 46px;
+            div {
+                display: flex;
+                align-items: center;
+                label {
+                    color: rgb(202, 202, 202);
+                    font-size: 0.7rem;
+                }
+            }
+            
+            a {
+                color: rgb(202, 202, 202);
+                font-size: 0.7rem;
+            }
+        }
+
+        &__facebook {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 10px;
+            margin-left: 46px;
+            img {
+                width: 15px;
+            }
+
+            a {
+                color: rgb(119, 117, 117);
+                font-size: 0.7rem;
+                margin-left: 4px;
+            }
+        }
+
+        &__inscription {
+            p {
+                color: rgb(119, 117, 117);
+                font-size: 0.8rem;
+                margin-top: 10px;
+                margin-left: 46px;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        &__more {
+            p {
+                color: rgb(177, 174, 174);
+                font-size: 0.7rem;
+                margin-top: 10px;
+                margin-left: 46px;
+                margin-right: 40px;
+            }
+
+            a {
+                color: rgb(53, 33, 235);
+                font-size: 0.7rem;
+                margin-left: 46px;
+            }
+        }
     }
-
-    ::placeholder{
-        font-size: 15px;
-        font-weight: normal;
-    }
-
-    .div__textFirstConnection {
-        margin-top: 20px;
-        color: rgb(133, 131, 131);
-        font-size: 15px;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
 }
-
-.input__submit {
-    width: 71%;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    background-color: #e50914;
-    border: 1px solid black;
-    border-radius: 5px;
-    transition: 0.7s ease;
-}
-
-.div__help {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-}
-

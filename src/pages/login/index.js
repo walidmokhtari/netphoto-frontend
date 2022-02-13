@@ -5,6 +5,8 @@ import Input from '../../components/UI/Input/Input';
 import { useRouter } from "next/router";
 import authService from '../../services/auth.service';
 import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
+import NavAccount from '../../components/navs/NavAccount/NavAccount';
+import FbImage from '../../../public/facebook.png'
 
 function Login(props) {
     const router = useRouter();
@@ -32,43 +34,60 @@ function Login(props) {
 
     return (
         <div className={styles.div__login}>
-            <form className={styles.div__card} onSubmit={(e) => handleSubmit(e)}>
-                <h1>S'identifier</h1>
-                <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    required={true}
-                    onChange={(e) => {
-                        setUser({ ...user, email: e.target.value });
-                    }}
-                />
-                <Input
-                     type="password"
-                     id="password"
-                     name="password"
-                     placeholder="Mot de passe"
-                     required={true}
-                     onChange={(e) => {
-                        setUser({ ...user, password: e.target.value });
-                    }}
-                />
-                <input className={styles.input__submit} type="submit" value="S'identifier" />
-                <div className={styles.div__help}>
-                    <p className={styles.div__textFirstConnection}>Première visite sur Netflix ?</p><a href="/register">Inscrivez-vous.</a>
-                </div>
-                
-
-                {
+            <NavAccount type="Login"></NavAccount>
+            <div className={styles.div__body}>
+                <div className={styles.div}>
+                    <h1>S'identifier</h1>
+                    <form className={styles.div__form} onSubmit={(e) => handleSubmit(e)}>
+                        <Input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="E-mail ou numéro de téléphone"
+                            required={true}
+                            onChange={(e) => {
+                                setUser({ ...user, email: e.target.value });
+                            }}
+                        />
+                        <Input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Mot de passe"
+                            required={true}
+                            onChange={(e) => {
+                               setUser({ ...user, password: e.target.value });
+                            }}
+                        />
+                        <input className={styles.input__submit} type="submit" value="S'identifier" />
+                    </form>
+                    <div className={styles.div__check}>
+                        <div>
+                            <input type="checkbox" />
+                            <label>Se souvenir de moi</label>
+                        </div>
+                        <a href="">Besoin d'aide?</a>
+                    </div>
+                    <div className={styles.div__facebook}>
+                        <img src={FbImage.src}></img>
+                        <a href="">S'identifier avec facebook</a>
+                    </div>
+                    <div className={styles.div__inscription}>
+                        <p>Première visite sur Netflix ? <a href="/register">Inscrivez-vous.</a></p>
+                    </div>
+                    <div className={styles.div__more}>
+                        <p>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n'êtes pas un robot.</p>
+                        <a href="">En savoir plus.</a>
+                    </div>
+                    {
                     error ? (
                         <ErrorMessage message={errorMessage}/>
                     )
                     :
                     ""
                 }
-            </form>
-            
+                </div>
+            </div>
         </div>
     );
 }

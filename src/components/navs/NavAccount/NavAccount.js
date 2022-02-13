@@ -26,8 +26,9 @@ function NavAccount(props) {
         const handleClick = () => {
             buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
         }
-    };
+    } 
     
+
     return (
         <div className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" ? styles.nav__black : ""} ${buttonMenu && styles.parent} ${props.type == "Home" && styles.nav__fixed}`}>
             {
@@ -66,6 +67,7 @@ function NavAccount(props) {
                 props.type == "Account" || props.type == "Profil" ?
                     <a href="#" className={styles.nav__action}>
                         <img src={Avatar.src} alt="Avatar"></img>
+                        <span>&#9660;</span>
                     </a>
                     :
                     ""

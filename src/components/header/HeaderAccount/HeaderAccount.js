@@ -12,6 +12,7 @@ const HeaderAccount = () => {
     const [movie, setMovie] = useState({});
     const [popup, setPopup] = useState(false);
     const { loading, error, data } = useQuery(getMovies);
+    console.log(movie.image)
 
     function handleClick() {
       popup ? setPopup(false) : setPopup(true);
@@ -36,7 +37,7 @@ const HeaderAccount = () => {
 
       
       const headerStyle = {
-        backgroundImage: "url(https://media.ouest-france.fr/v1/pictures/MjAyMTA5MzdiZjEzNTFiNWRkYmI4MTFlYmM5NmI0NGUxODg0NzM?width=1260&height=708&focuspoint=50%2C25&cropresize=1&client_id=bpeditorial&sign=60eede4e5efb316ce5123a786ed3ad595df9dc5468b0ad3ddbb18bdca63bca06)",
+        backgroundImage: `url(${movie.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center center",
 

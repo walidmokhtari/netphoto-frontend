@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useState } from 'react/cjs/react.development';
 import { useRouter } from "next/router";
+import CartContext from '../../context/CartContext';
 import authService from '../../services/auth.service';
 import styles from './Account.module.scss';
 import withAuth from '../../HOC/withAuth';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
+import NavLinks from '../../components/navs/NavLinks/NavLinks';
 import HeaderAccount from '../../components/header/HeaderAccount/HeaderAccount';
 import RowAccount from '../../components/rows/RowAccount/RowAccount';
 
@@ -14,6 +16,7 @@ import { useQuery } from "@apollo/react-hooks";
 function Account(props) {
     const [user, setUser] = useState({});
     const router = useRouter();
+    const {isShown, shown, logout} = useContext(CartContext);
     const { loading, error, data } = useQuery(getMovies);
     
 
@@ -24,6 +27,7 @@ function Account(props) {
             authService.getUser(token)
             .then((data) => {
                 setUser(data);
+                localStorage.setItem("firstName",data.firstName);
             })
             .catch((err) => {
                 console.log(err);
@@ -46,6 +50,7 @@ function Account(props) {
     return (
         <div className={styles.div__account}>  
             <NavAccount type="Account"></NavAccount>
+            <NavLinks></NavLinks>
             <HeaderAccount></HeaderAccount>
             <RowAccount title="Tendances actuelles"></RowAccount>
             <RowAccount title="Top 10 en France aujourd'hui"></RowAccount>

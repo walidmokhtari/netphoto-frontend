@@ -6,6 +6,7 @@ export const getMovies = gql`
             id,
             title,
             description,
+            image,
             video,
             publicationDate
         }

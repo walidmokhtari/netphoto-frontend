@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { useState } from "react";
+import CartContext from "../../../context/CartContext";
 import styles from './NavAccount.module.scss';
 import LogoImg from "../../../../public/logo.png";
 import Avatar from "../../../../public/avatar.png";
@@ -13,6 +14,8 @@ function NavAccount(props) {
     
     const [navBlack, setNavBlack] = useState(false);
     const [buttonMenu, setButtonMenu] = useState(false);
+    const {shown} = useContext(CartContext);
+
 
     if (props.type == "Account" || props.type == "Profil") {
         const transitionNav  = () => {
@@ -27,6 +30,8 @@ function NavAccount(props) {
             buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
         }
     } 
+
+    
     
 
     return (
@@ -44,9 +49,9 @@ function NavAccount(props) {
             {
                 props.type == "Account" ?
                     <nav className={styles.nav__links}>
-                        <a href="#" className={styles.nav__link}>Accueil</a>
-                        <a href="#" className={styles.nav__link}>Séries</a>
+                        <a href="#" className={styles.nav__link}><span>Accueil</span></a>
                         <a href="#" className={styles.nav__link}>Films</a>
+                        <a href="#" className={styles.nav__link}>Wishlist</a>
                     </nav>
                     :
                     ""
@@ -65,7 +70,7 @@ function NavAccount(props) {
                 }
                 {
                 props.type == "Account" || props.type == "Profil" ?
-                    <a href="#" className={styles.nav__action}>
+                    <a href="#" className={styles.nav__action} onMouseEnter={shown} >
                         <img src={Avatar.src} alt="Avatar"></img>
                         <span>&#9660;</span>
                     </a>

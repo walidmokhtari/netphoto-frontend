@@ -11,6 +11,7 @@
     color: #fff;
     background: linear-gradient(to bottom, rgba(74, 74, 74, 0.6),rgba(0, 0, 0, 0));
     transition: background-color 0.7s ease-in-out;
+    z-index: 3;
     
     &__black {
         background: none;
@@ -38,10 +39,14 @@
     }
 
     &__links {
-        margin-left: 20px;
+        margin-left: 30px;
         transition: background-color 0.7s ease-in-out;
+        font-weight: 400;
         .nav__link {
-            padding: 5px 10px;
+            padding: 5px 20px;
+            span {
+                font-weight: bold;
+            }
         }
 
         @media screen and (max-width:767.98px){
@@ -74,6 +79,11 @@
         justify-content: flex-end;
         flex: 1;
         .nav__action {
+            span {
+                font-weight: bold;
+                margin-left: 10px;
+                margin-top: -10px;
+            }
 
             @media screen and (min-width:768px){
                 margin-left: 20px;

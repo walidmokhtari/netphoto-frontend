@@ -20,7 +20,6 @@ const withAuth = (WrappedComponent) => {
             }
           })
           .catch((err) => {
-            console.log("qiiiw");
             localStorage.removeItem("token");
             router.push("/");
           });

@@ -12,7 +12,6 @@ const HeaderAccount = () => {
     const [movie, setMovie] = useState({});
     const [popup, setPopup] = useState(false);
     const { loading, error, data } = useQuery(getMovies);
-    console.log(movie.image)
 
     function handleClick() {
       popup ? setPopup(false) : setPopup(true);

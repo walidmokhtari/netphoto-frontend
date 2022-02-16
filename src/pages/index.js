@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import WithOutAuth from '../HOC/withOutAuth';
 import Image from 'next/image'
 import SectionText from '../components/section/SectionText/SectionText'
 import SectionTextImageRight from '../components/section/SectionTextImage/SectionTextImageRight/SectionTextImageRight'
@@ -10,15 +11,15 @@ import Ecran4Image from "../../public/ecran4.png"
 import NavAccount from '../components/navs/NavAccount/NavAccount';
 import { useRouter } from "next/router";
 
-export default function Home() {
-  const router = useRouter();
+function Home() {
+  /*const router = useRouter();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token != null) {
         router.push("/account");
     }
-  }, []);
+  }, []);*/
 
   return (
     <div className="container">
@@ -33,3 +34,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default WithOutAuth(Home);

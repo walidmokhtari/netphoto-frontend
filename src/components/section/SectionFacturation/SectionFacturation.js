@@ -11,7 +11,7 @@ function SectionFacturation(props) {
             <div className={styles.div__parent__right}>
                 <div className={styles.div__parent__email}>
                     <div className={styles.div__email}>
-                        <p>foudilabdelkarim@gmail.com</p>
+                        <p>{localStorage.getItem("email")}</p>
                         <p className={styles.p__gray}>Mot de passe : ********</p>
                         <p className={styles.p__gray}>Téléphone : 07 85 31 06 43</p>
                     </div>

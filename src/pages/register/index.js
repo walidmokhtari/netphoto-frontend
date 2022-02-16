@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import WithOutAuth from '../../HOC/withOutAuth';
 import { useRouter } from 'next/router';
 import styles from './Register.module.scss';
 import TitlePage from '../../components/UI/TitlePage/TitlePage';
@@ -119,4 +120,4 @@ function Register(props) {
     );
 }
 
-export default Register;
+export default WithOutAuth(Register);

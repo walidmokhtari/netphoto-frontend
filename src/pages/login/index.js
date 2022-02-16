@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import WithOutAuth from '../../HOC/withOutAuth';
 import styles from './Login.module.scss'
 import TitlePage from '../../components/UI/TitlePage/TitlePage';
 import Input from '../../components/UI/Input/Input';
@@ -99,4 +100,4 @@ function Login(props) {
     );
 }
 
-export default Login;
+export default WithOutAuth(Login);

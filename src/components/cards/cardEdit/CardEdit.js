@@ -7,7 +7,12 @@ const CardEdit = (props) =>{
         <div className={styles.div}>
             <h1>{props.title}</h1>
             <form className={styles.div__form}>
-                <input type={props.type} placeholder={props.page == "perso" ? "Nom" : ""}></input>
+                {
+                    props.page == "email" || props.page == "perso" ?
+                        <input type={props.type} placeholder={props.page == "perso" ? "Nom" : ""} value={props.page == "email" ? localStorage.getItem("email") : null}></input>
+                    :
+                    ""
+                }
                 <input type={props.type} placeholder={props.page == "perso" ? "Prénom" : props.placeHolder}></input>
                 {
                     props.page != "perso"  ?

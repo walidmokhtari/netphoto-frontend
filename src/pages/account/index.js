@@ -27,7 +27,10 @@ function Account(props) {
             authService.getUser(token)
             .then((data) => {
                 setUser(data);
+                console.log(data);
                 localStorage.setItem("firstName",data.firstName);
+                localStorage.setItem("lastName",data.lastName);
+                localStorage.setItem("email",data.email);
             })
             .catch((err) => {
                 console.log(err);

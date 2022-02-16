@@ -57,7 +57,6 @@ function Account(props) {
             <RowAccount title="Films européens"></RowAccount>
             <RowAccount title="Films d'actions"></RowAccount>
             <RowAccount title="Documentaires"></RowAccount>
-            <div className={styles.test}></div>
         </div>
     );
 }

@@ -16,9 +16,9 @@ function SectionFacturation(props) {
                         <p className={styles.p__gray}>Téléphone : 07 85 31 06 43</p>
                     </div>
                     <div className={styles.div__email__link}>
-                        <a href="#">Modifier l'adresse e-mail</a>
-                        <a href="#">Modifier le mot de passe</a>
-                        <a href="#">Modifier le numéro de téléphone</a>
+                        <a href="/account/profil/email">Modifier l'adresse e-mail</a>
+                        <a href="/account/profil/password">Modifier le mot de passe</a>
+                        <a href="/account/profil/personalInformations">Modifier le nom et prénom</a>
                     </div>
                 </div>
                 <div className={styles.div__parent__paiement}>

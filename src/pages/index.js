@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <div className="container">
-      <main >
+      <main>
         <NavAccount type="Home"></NavAccount>
         <SectionText/>
         <SectionTextImageRight  imageLink = {Ecran1Image.src} title="Regardez Netflix sur votre TV" description="Regardez Netflix sur votre Smart TV, PlayStation, Xbox, Chromecast, Apple TV, lecteurs Blu-ray et bien plus."/>

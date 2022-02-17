@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 const CartContext = createContext({
     logout: () => {},
     shown: () => {},
+    user: (data) => {},
+    data: {},
     isShown: false,
 });
 
@@ -12,7 +14,6 @@ export const CartContextProvider = ({ children }) => {
     
 
   const [isShown, setIsShown] = useState(false);
-  
 
   const shown = () => {
     isShown ? setIsShown(false) : setIsShown(true);
@@ -23,11 +24,13 @@ export const CartContextProvider = ({ children }) => {
         router.push("/");
   };
 
+ 
+
 
   const context = {
     isShown,
     shown,
-    logout,
+    logout
   };
 
   return (

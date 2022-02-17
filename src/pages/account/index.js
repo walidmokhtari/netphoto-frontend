@@ -14,7 +14,6 @@ import { getMovies } from "../../graphql/queries/movies";
 import { useQuery } from "@apollo/react-hooks";
 
 function Account(props) {
-    const [user, setUser] = useState({});
     const router = useRouter();
     const {isShown, shown, logout} = useContext(CartContext);
     const { loading, error, data } = useQuery(getMovies);
@@ -26,11 +25,9 @@ function Account(props) {
         if (token != null) {
             authService.getUser(token)
             .then((data) => {
-                setUser(data);
-                console.log(data);
-                localStorage.setItem("firstName",data.firstName);
-                localStorage.setItem("lastName",data.lastName);
-                localStorage.setItem("email",data.email);
+                localStorage.setItem('firstName', data.firstName);
+                localStorage.setItem('lastName', data.lastName);
+                localStorage.setItem('email', data.email);
             })
             .catch((err) => {
                 console.log(err);

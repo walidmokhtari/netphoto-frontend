@@ -8,7 +8,13 @@ function index(props) {
     return (
         <div className={styles.div}>
             <NavAccount type="Email"></NavAccount>
-            <CardEdit placeHolder="Nouvel e-mail" type="text" page="email" title="Modifier mon adresse e-mail"></CardEdit>
+            <CardEdit 
+                placeHolder="Nouvel e-mail" 
+                type="email" 
+                page="email" 
+                title="Modifier mon adresse e-mail" 
+                msgSucces="Votre adresse e-mail a été modifié avec succès">
+            </CardEdit>
         </div>
     );
 }

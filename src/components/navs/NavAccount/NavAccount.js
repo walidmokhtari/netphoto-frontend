@@ -35,7 +35,10 @@ function NavAccount(props) {
     
 
     return (
-        <div className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" || props.type == "Email" || props.type == "Password" ? styles.nav__black : ""} ${buttonMenu && styles.parent} ${props.type == "Home" || props.type == "Login" && styles.nav__fixed}`}>
+        <div 
+        className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" || props.type == "Email" || props.type == "Password" || props.type == "Perso" ? styles.nav__black : ""} 
+        ${buttonMenu && styles.parent} ${props.type == "Home" || props.type == "Login" && styles.nav__fixed}`}
+        >
             {
                 props.type == "Account" ?
                 <button className={styles.nav__button} onClick={handleClick}>

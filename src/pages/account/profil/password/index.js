@@ -8,7 +8,13 @@ function index(props) {
     return (
         <div className={styles.div}>
             <NavAccount type="Password"></NavAccount>
-            <CardEdit placeHolder="Nouveau mot de passe" type="password" title="Modifier mon mot de passe"></CardEdit>
+            <CardEdit 
+                placeHolder="Nouveau mot de passe" 
+                type="password"
+                page="password" 
+                title="Modifier mon mot de passe" 
+                msgSucces="Votre mot de passe a été modifié avec succès">
+            </CardEdit>
         </div>
     );
 }

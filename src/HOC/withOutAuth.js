@@ -13,7 +13,6 @@ const WithOutAuth = (WrappedComponent) => {
             if (token == null) {
                 setNoToken(true);
             } else {
-                console.log("I'am herreee :D")
                 authService
                 .verifyToken(token)
                 .then((data) => {

@@ -5,13 +5,13 @@ import { PlayArrowRounded } from '@material-ui/icons';
 import { InfoOutlined } from '@material-ui/icons';
 import QuickView from '../../quick/QuickView/QuickView';
 
-import { getMovies } from '../../../graphql/queries/movies';
+import { getQueyries } from '../../../graphql/queries/queyries';
 import { useQuery } from '@apollo/client';
 
 const HeaderAccount = () => {
     const [movie, setMovie] = useState({});
     const [popup, setPopup] = useState(false);
-    const { loading, error, data } = useQuery(getMovies);
+    const { loading, error, data } = useQuery(getQueyries);
 
     function handleClick() {
       popup ? setPopup(false) : setPopup(true);

@@ -5,6 +5,7 @@ import Button from "../UI/Button/Button";
 import styles from "./MainLayout.module.scss";
 import Footer from "../footer/Footer";
 
+
 const MainLayout = ({children}) => {
     return (
         <>

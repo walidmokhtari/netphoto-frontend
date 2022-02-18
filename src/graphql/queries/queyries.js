@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const getMovies = gql`
+export const getQueyries = gql`
     query {
         getMovies{
             id,
@@ -9,6 +9,10 @@ export const getMovies = gql`
             image,
             video,
             publicationDate
+        },
+        getCategories{
+            id,
+            title
         }
     }
 `

@@ -10,14 +10,13 @@ import NavLinks from '../../components/navs/NavLinks/NavLinks';
 import HeaderAccount from '../../components/header/HeaderAccount/HeaderAccount';
 import RowAccount from '../../components/rows/RowAccount/RowAccount';
 
-import { getMovies } from "../../graphql/queries/movies";
+import { getQueyries } from "../../graphql/queries/queyries";
 import { useQuery } from "@apollo/react-hooks";
 
 function Account(props) {
     const router = useRouter();
-    const {isShown, shown, logout} = useContext(CartContext);
-    const { loading, error, data } = useQuery(getMovies);
-    
+    const {isShown, shown} = useContext(CartContext);
+    const { loading, error, data } = useQuery(getQueyries);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -47,16 +46,19 @@ function Account(props) {
         return null;
     }
 
+    
+
     return (
         <div className={styles.div__account}>  
             <NavAccount type="Account"></NavAccount>
             <NavLinks></NavLinks>
-            <HeaderAccount></HeaderAccount>
-            <RowAccount title="Tendances actuelles"></RowAccount>
-            <RowAccount title="Top 10 en France aujourd'hui"></RowAccount>
-            <RowAccount title="Films européens"></RowAccount>
-            <RowAccount title="Films d'actions"></RowAccount>
-            <RowAccount title="Documentaires"></RowAccount>
+            <HeaderAccount movies={data.getMovies}></HeaderAccount>
+            {
+                data.getCategories.map((categorie) => 
+                    <RowAccount title={categorie.title}></RowAccount>
+                )
+            }
+            
         </div>
     );
 }

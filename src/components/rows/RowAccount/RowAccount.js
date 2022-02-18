@@ -4,13 +4,13 @@ import MovieImage from "../../../../public/13heures.jpg";
 import Image from "../../../../public/DontLookUp.jpg";
 import { PlayCircleFilledRounded} from '@material-ui/icons';
 
-import { getMovies } from '../../../graphql/queries/movies';
+import { getQueyries } from '../../../graphql/queries/queyries';
 import { useQuery } from '@apollo/client';
 
 
 
 function RowAccount(props) {
-    const { loading, error, data } = useQuery(getMovies);
+    const { loading, error, data } = useQuery(getQueyries);
 
     if (loading) {
       return "loading...";

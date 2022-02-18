@@ -1,12 +1,13 @@
 import react from "react";
-import styles from "./SectionFacturation.module.scss";
+import styles from "./SectionFacturation.module.scss"
+import Link from 'next/link';
 
 function SectionFacturation(props) {
     return (
         <section className={styles.div__parent}>
             <div className={styles.div__parent__left}>
                 <h1>Abonnement et facturation</h1>
-                <button type="button">Annuler l'abonnement</button>
+                <button type="button">Annuler l&apos;abonnement</button>
             </div>
             <div className={styles.div__parent__right}>
                 <div className={styles.div__parent__email}>
@@ -16,9 +17,9 @@ function SectionFacturation(props) {
                         <p className={styles.p__gray}>Téléphone : 07 85 31 06 43</p>
                     </div>
                     <div className={styles.div__email__link}>
-                        <a href="/account/profil/email">Modifier l'adresse e-mail</a>
-                        <a href="/account/profil/password">Modifier le mot de passe</a>
-                        <a href="/account/profil/personalInformations">Modifier le nom et prénom</a>
+                        <Link href="/account/profil/email">Modifier l&apos;adresse e-mail</Link>
+                        <Link href="/account/profil/password">Modifier le mot de passe</Link>
+                        <Link href="/account/profil/personalInformations">Modifier le nom et prénom</Link>
                     </div>
                 </div>
                 <div className={styles.div__parent__paiement}>

@@ -7,7 +7,8 @@ import { useRouter } from "next/router";
 import authService from '../../services/auth.service';
 import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
-import FbImage from '../../../public/facebook.png'
+import FbImage from '../../../public/facebook.png';
+import Link from 'next/link';
 
 function Login(props) {
     const router = useRouter();
@@ -45,7 +46,7 @@ function Login(props) {
             <NavAccount type="Login"></NavAccount>
             <div className={styles.div__body}>
                 <div className={styles.div}>
-                    <h1>S'identifier</h1>
+                    <h1>S&apos;identifier</h1>
                     <form className={styles.div__form} onSubmit={(e) => handleSubmit(e)}>
                         <Input
                             type="email"
@@ -74,17 +75,17 @@ function Login(props) {
                             <input type="checkbox" />
                             <label>Se souvenir de moi</label>
                         </div>
-                        <a href="">Besoin d'aide?</a>
+                        <a href="">Besoin d&apos;aide?</a>
                     </div>
                     <div className={styles.div__facebook}>
                         <img src={FbImage.src}></img>
-                        <a href="">S'identifier avec facebook</a>
+                        <a href="">S&apos;identifier avec facebook</a>
                     </div>
                     <div className={styles.div__inscription}>
-                        <p>Première visite sur Netflix ? <a href="/register">Inscrivez-vous.</a></p>
+                        <p>Première visite sur Netflix ? <Link href="/register">Inscrivez-vous.</Link></p>
                     </div>
                     <div className={styles.div__more}>
-                        <p>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n'êtes pas un robot.</p>
+                        <p>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n&apos;êtes pas un robot.</p>
                         <a href="">En savoir plus.</a>
                     </div>
                     {

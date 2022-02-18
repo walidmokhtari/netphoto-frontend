@@ -55,7 +55,7 @@ function Account(props) {
             <HeaderAccount movies={data.getMovies}></HeaderAccount>
             {
                 data.getCategories.map((categorie) => 
-                    <RowAccount title={categorie.title}></RowAccount>
+                    <RowAccount title={categorie.title} key={categorie.id}></RowAccount>
                 )
             }
             

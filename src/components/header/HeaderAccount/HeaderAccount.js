@@ -52,7 +52,7 @@ const HeaderAccount = () => {
               </p>
               <div className={styles.header__buttons}>
                 <button className={`${styles.header__button} ${styles.header__button__play}`}><PlayArrowRounded></PlayArrowRounded>Lecture</button>
-                <button className={styles.header__button} onClick={handleClick}><InfoOutlined></InfoOutlined>Plus d'info</button>
+                <button className={styles.header__button} onClick={handleClick}><InfoOutlined></InfoOutlined>Plus d&apos;info</button>
               </div>
           </div>
           <QuickView qvStyle={headerStyle} movie={movie} functionPopup={handleClick} popupStatus={popup}></QuickView>

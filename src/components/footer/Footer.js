@@ -24,7 +24,7 @@ const Footer = () => {
                 <li className={styles.footer__link}><a href='#' >Seulement sur Netflix</a></li>
                 <li className={styles.footer__link}><a href='#' >Seulement sur Netflix</a></li>
                 <li className={styles.footer__link}><a href='#' >Recrutement</a></li>
-                <li className={styles.footer__link}><a href='#' >Conditions d'utilisation</a></li>
+                <li className={styles.footer__link}><a href='#' >Conditions d&apos;utilisation</a></li>
                 <li className={styles.footer__link}><a href='#' >Nous contacter</a></li>
                 <li className={styles.footer__link}><a href='#' >Compte</a></li>
                 <li className={styles.footer__link}><a href='#' >Utiliser des cartes cadeaux</a></li>

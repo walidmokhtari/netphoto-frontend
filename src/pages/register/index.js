@@ -7,6 +7,7 @@ import Input from '../../components/UI/Input/Input';
 import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
 import authService from '../../services/auth.service';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
+import Link from 'next/link';
 
 function Register(props) {
     const router = useRouter();
@@ -49,7 +50,7 @@ function Register(props) {
             <NavAccount type="Login"></NavAccount>
             <div className={styles.div__body}>
                 <div className={styles.div}>
-                    <h1>S'inscrire</h1>
+                    <h1>S&apos;inscrire</h1>
                     <form className={styles.div__form} onSubmit={(e) => handleSubmit(e)}>
                         <Input
                             type="text"
@@ -98,13 +99,13 @@ function Register(props) {
                             <input type="checkbox" />
                             <label>Se souvenir de moi</label>
                         </div>
-                        <a href="">Besoin d'aide?</a>
+                        <a href="">Besoin d&apos;aide?</a>
                     </div>
                     <div className={styles.div__login}>
-                        <p>Vous avez un compte Netflix ? <a href="/login">Connectez-vous.</a></p>
+                        <p>Vous avez un compte Netflix ? <Link href="/login">Connectez-vous.</Link></p>
                     </div>
                     <div className={styles.div__more}>
-                        <p>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n'êtes pas un robot.</p>
+                        <p>Cette page est protégée par Google reCAPTCHA pour nous assurer que vous n&apos;êtes pas un robot.</p>
                         <a href="">En savoir plus.</a>
                     </div>
                     {

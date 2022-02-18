@@ -9,6 +9,7 @@ import Button from "../../UI/Button/Button";
 import SearchIcon from '@material-ui/icons/Search';
 import CardGiftcard from '@material-ui/icons/CardGiftcard';
 import Notifications  from "@material-ui/icons/Notifications";
+import Link from "next/link";
 
 function NavAccount(props) {
     
@@ -22,16 +23,15 @@ function NavAccount(props) {
             window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
         };
 
-        useState(() => {
-            document.addEventListener("scroll", transitionNav);
-        });
-
         const handleClick = () => {
             buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
         }
+
     } 
 
-    
+    useState(() => {
+        document.addEventListener("scroll", transitionNav);
+    });
     
 
     return (
@@ -48,7 +48,7 @@ function NavAccount(props) {
                 ""
             }
             
-            <a href="/" ><img className={styles.nav__logo} src={LogoImg.src} alt="Netflix logo"></img></a>
+            <Link href="/" ><img className={styles.nav__logo} src={LogoImg.src} alt="Netflix logo"></img></Link>
             {
                 props.type == "Account" ?
                     <nav className={styles.nav__links}>

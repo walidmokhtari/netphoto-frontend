@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import styles from "./HeaderAccount.module.scss";
 import { PlayArrowRounded } from '@material-ui/icons';
 import { InfoOutlined } from '@material-ui/icons';

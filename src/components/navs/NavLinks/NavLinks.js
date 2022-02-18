@@ -16,7 +16,7 @@ function NavLinks(props) {
                 <li className={`${styles.nav__item} ${styles.avatar}`}><img src={Avatar.src} alt="Avatar"></img><Link href=""><p>{localStorage.getItem("firstName")}</p></Link></li>
                 <li className={styles.nav__item}><EditOutlined></EditOutlined><Link href="/account/profil"><p>Gérer le profil</p></Link></li>
                 <li className={styles.nav__item}><PersonOutline></PersonOutline><Link href="/account/profil"><p>Compte</p></Link></li>
-                <li className={styles.nav__item}><HelpOutline></HelpOutline><a href=""><p>Centre d'aide</p></a></li>
+                <li className={styles.nav__item}><HelpOutline></HelpOutline><a href=""><p>Centre d&apos;aide</p></a></li>
                 <li className={`${styles.nav__item} ${styles.logout}`}><a href="" onClick={logout} ><p>Déconnexion</p></a></li>
             </ul>
         </nav>

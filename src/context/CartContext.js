@@ -21,7 +21,6 @@ export const CartContextProvider = ({ children }) => {
 
   const logout = () => {
         localStorage.clear();
-        router.push("/");
   };
 
  

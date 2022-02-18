@@ -11,7 +11,7 @@ function index(props) {
     return (
         <div className={styles.div__profil}>
             <NavAccount type="Profil"></NavAccount>
-            <NavLinks user="walid"></NavLinks>
+            <NavLinks></NavLinks>
             <div className={styles.div__profil__compte}>
                 <div>
                     <h1>Compte</h1>

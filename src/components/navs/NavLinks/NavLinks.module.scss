@@ -4,6 +4,9 @@
     
     &__list {
         padding: 2rem;
+        li {
+            cursor: pointer;
+        }
         .nav__item {
             margin-bottom: 15px;
             display: flex;

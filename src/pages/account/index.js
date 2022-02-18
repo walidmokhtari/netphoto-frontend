@@ -17,24 +17,6 @@ function Account(props) {
     const {isShown, shown} = useContext(CartContext);
     const { loading, error, data } = useQuery(getQueyries);
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-
-        if (token != null) {
-            authService.getUser(token)
-            .then((data) => {
-                localStorage.setItem('firstName', data.firstName);
-                localStorage.setItem('lastName', data.lastName);
-                localStorage.setItem('email', data.email);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        } else {
-            router.push("/");
-        }
-    }, []);
-
     
     if (loading) {
         return "loading...";
@@ -46,7 +28,21 @@ function Account(props) {
     }
 
     
-
+    const token = localStorage.getItem("token");
+    if (token != null) {
+        authService.getUser(token)
+        .then((data) => {
+            localStorage.setItem('firstName', data.firstName);
+            localStorage.setItem('lastName', data.lastName);
+            localStorage.setItem('email', data.email);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    } else {
+        router.push("/");
+    }
+    
     return (
         <div className={styles.div__account}>  
             <NavAccount type="Account"></NavAccount>

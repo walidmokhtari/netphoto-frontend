@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react';
-import { useState } from 'react/cjs/react.development';
 import { useRouter } from "next/router";
 import CartContext from '../../context/CartContext';
 import authService from '../../services/auth.service';

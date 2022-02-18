@@ -12,6 +12,9 @@
     background: linear-gradient(to bottom, rgba(74, 74, 74, 0.6),rgba(0, 0, 0, 0));
     transition: background-color 0.7s ease-in-out;
     z-index: 3;
+    img {
+        cursor: pointer;
+    }
     
     &__black {
         background: none;

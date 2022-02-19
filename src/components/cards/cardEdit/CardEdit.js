@@ -1,4 +1,5 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useContext} from 'react';
+import CartContext from '../../../context/CartContext';
 import styles from './CardEdit.module.scss';
 import authService from '../../../services/auth.service';
 import SuccesMessage from '../../UI/SuccesMessage/SuccesMessage';
@@ -7,6 +8,7 @@ import SuccesMessage from '../../UI/SuccesMessage/SuccesMessage';
 const CardEdit = (props) =>{
     const [user, setUser] = useState({});
     const [success, setSuccess] = useState(false);
+    const {password} = useContext(CartContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();

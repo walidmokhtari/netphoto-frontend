@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const CartContext = createContext({
     logout: () => {},
     shown: () => {},
-    user: (data) => {},
     data: {},
     isShown: false,
 });
@@ -23,13 +22,11 @@ export const CartContextProvider = ({ children }) => {
         localStorage.clear();
   };
 
- 
-
 
   const context = {
     isShown,
     shown,
-    logout
+    logout,
   };
 
   return (

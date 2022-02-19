@@ -73,7 +73,7 @@ function NavAccount(props) {
                 }
                 {
                 props.type == "Account" || props.type == "Profil" ?
-                    <a href="#" className={styles.nav__action} onMouseEnter={shown} >
+                    <a href="#" className={styles.nav__action} onMouseEnter={shown} onClick={shown}>
                         <img src={Avatar.src} alt="Avatar"></img>
                         <span>&#9660;</span>
                     </a>

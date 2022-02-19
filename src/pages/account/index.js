@@ -14,7 +14,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 function Account(props) {
     const router = useRouter();
-    const {isShown, shown} = useContext(CartContext);
+    const {isShown, shown, pass} = useContext(CartContext);
     const { loading, error, data } = useQuery(getQueyries);
 
     

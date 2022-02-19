@@ -8,7 +8,8 @@ export const getQueyries = gql`
             description,
             image,
             video,
-            publicationDate
+            publicationDate,
+            categories {id, title}
         },
         getCategories{
             id,

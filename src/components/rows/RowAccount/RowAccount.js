@@ -27,8 +27,10 @@ function RowAccount(props) {
             <div className={styles.row__images}>
                 {
                     data.getMovies.map((movie) => (
-                        
-                        <div key={movie.id} className={styles.row__content}>
+                        movie.categories.map((categorie) => (
+                            categorie.title == props.title ? 
+                            (
+                                <div key={movie.id} className={styles.row__content}>
                             <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
                             <div className={styles.row__info}>
                                 <div className={styles.row__buttons}>
@@ -54,7 +56,12 @@ function RowAccount(props) {
                                     </div>   
                                 </div>
                             </div>
-                        </div>
+                            </div>
+                            )
+                            :
+                            ""
+
+                        ))
                     ))
                 }
             </div>

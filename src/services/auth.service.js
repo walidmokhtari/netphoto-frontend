@@ -19,6 +19,16 @@ export default {
         }).then((res) => res.json())
     },
 
+    loginAdmin(user) {
+      return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/login-admin`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+      }).then((res) => res.json())
+    },
+
     getUser(token) {
         return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/get-user`, {
             headers: {

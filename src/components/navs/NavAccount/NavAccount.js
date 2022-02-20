@@ -29,9 +29,7 @@ function NavAccount(props) {
 
     } 
 
-    useState(() => {
-        document.addEventListener("scroll", transitionNav);
-    });
+    
     
 
     return (

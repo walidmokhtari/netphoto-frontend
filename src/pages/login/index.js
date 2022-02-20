@@ -16,13 +16,6 @@ function Login(props) {
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token != null) {
-            router.push("/account");
-        }
-    }, []);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         authService.login(user)
@@ -93,8 +86,8 @@ function Login(props) {
                         <ErrorMessage message={errorMessage}/>
                     )
                     :
-                    ""
-                }
+                        ""
+                    }
                 </div>
             </div>
         </div>

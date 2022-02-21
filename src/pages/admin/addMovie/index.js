@@ -44,7 +44,7 @@ function AddMovie(props) {
                         <label>Catégories: </label>
                         {
                             data.getCategories.map((categorie) => (
-                                <div  className={styles.categories}>
+                                <div  className={styles.categories} key={categorie.id}>
                                     <input type="checkbox"  className={styles.categorie}></input>
                                     <label  className={styles.categorie}>{categorie.title} </label>
                                 </div>

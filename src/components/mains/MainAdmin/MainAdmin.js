@@ -35,11 +35,11 @@ function MainAdmin(props) {
                 {
                     props.type == "Movie" ?(
                         data.getMovies.map((movie) => (
-                            <CardData data={movie} type="Movie"></CardData>
+                            <CardData data={movie} type="Movie" key={movie.id}></CardData>
                         )))
                     :
                         data.getCategories.map((categorie) => (
-                            <CardData data={categorie} type="Categorie"></CardData>
+                            <CardData data={categorie} type="Categorie" key={categorie.id}></CardData>
                         ))
                 }
                 

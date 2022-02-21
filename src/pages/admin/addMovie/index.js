@@ -33,7 +33,7 @@ function AddMovie(props) {
                         <input type="text"></input>
                         <label>Description: </label>
                         <textarea cols="30" rows="15"></textarea>
-                        <label>Lien vers l'image: </label>
+                        <label>Lien vers l&apos;image: </label>
                         <input type="text"></input>
                         <label>Lien vers la vidéo: </label>
                         <input type="text"></input>

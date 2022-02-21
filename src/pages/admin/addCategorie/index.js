@@ -4,13 +4,13 @@ import NavAccount from '../../../components/navs/NavAccount/NavAccount';
 import NavAdmin from '../../../components/navs/NavAdmin/NavAdmin';
 import SuccesMessage from '../../../components/UI/SuccesMessage/SuccesMessage';
 import withAuthAdmin from '../../../HOC/withAuthAdmin';
-import { getMutations } from '../../../graphql/mutations/mutations';
+import { Categories } from '../../../graphql/mutations/mutations';
 import { useMutation } from "@apollo/react-hooks";
 
 function AddCategorie(props) {
     const [title, setTitle] = useState({});
    
-    const [save, {loading, error, data}] = useMutation(getMutations, {
+    const [save, {loading, error, data}] = useMutation(Categories, {
         variables: {
             title: title.title
         }

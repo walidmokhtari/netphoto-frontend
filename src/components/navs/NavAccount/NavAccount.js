@@ -15,7 +15,7 @@ function NavAccount(props) {
     
     const [navBlack, setNavBlack] = useState(false);
     const [buttonMenu, setButtonMenu] = useState(false);
-    const {shown} = useContext(CartContext);
+    const {shown, logout} = useContext(CartContext);
 
 
     if (props.type == "Account" || props.type == "Profil") {
@@ -80,7 +80,7 @@ function NavAccount(props) {
                 }
                 {
                 props.type == "Edit" || props.type == "Users" || props.type == "Dashbord"?
-                    <Button value="Se déconnecter" href="/login"></Button>
+                    <Button value="Se déconnecter" onclick={true}></Button>
                         :
                     ""
                 }

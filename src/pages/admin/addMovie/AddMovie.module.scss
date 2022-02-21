@@ -1,0 +1,63 @@
+.div__add__movie {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(233, 231, 231);
+
+    .div__main {
+        margin-top: 60px;
+        height: 180vh;
+        display: flex;
+        flex-direction: row;
+
+        .div__main__form {
+            flex-grow: 1;
+            padding: 5px 100px;
+
+            .div__title {
+                padding: 20px 10px;
+                h1 {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                }
+            }
+    
+            .form {
+                display: flex;
+                flex-direction: column;
+                padding: 20px 10px;
+                
+                input[type=text] {
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    padding: 10px 5px;
+                }
+
+                textarea {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                } 
+                
+                .categories {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    label {
+                        margin-left: 5px;
+                    }
+                }
+
+                input[type=submit] {
+                    cursor: pointer;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    padding: 10px 5px;
+                    width: 300px;
+                    background-color: #e50914;
+                    color: white;
+                    border: none;
+                    border-radius: 3px;
+                }
+
+            }
+        }
+    }
+}

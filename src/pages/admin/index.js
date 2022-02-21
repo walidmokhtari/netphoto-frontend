@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import authService from '../../services/auth.service';
 import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
-import Link from 'next/link';
 import Logo from '../../../public/logo_n.png';
 
 function Admin(props) {
@@ -25,7 +24,7 @@ function Admin(props) {
                 }
 
                 localStorage.setItem("token", data.token);
-                router.push("/account");
+                router.push("/admin/dashbord");
             })
             .catch((err) => {
                 console.log(err);
@@ -34,7 +33,7 @@ function Admin(props) {
 
     return (
         <div className={styles.div__admin}>
-            <NavAccount></NavAccount>
+            <NavAccount type="Admin"></NavAccount>
             <div className={styles.div__login}>
                 <div className={styles.div__title}>
                     <h1>S&apos;identifier</h1>

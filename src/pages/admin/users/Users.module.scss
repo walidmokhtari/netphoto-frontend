@@ -1,0 +1,13 @@
+.div__users {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(233, 231, 231);
+
+    .div__main {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+}

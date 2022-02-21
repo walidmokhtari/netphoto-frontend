@@ -34,7 +34,7 @@ function NavAccount(props) {
 
     return (
         <div 
-        className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" || props.type == "Email" || props.type == "Password" || props.type == "Perso" ? styles.nav__black : ""} 
+        className={`${styles.nav} ${navBlack || buttonMenu || props.type == "Profil" || props.type == "Email" || props.type == "Password" || props.type == "Perso" || props.type == "Admin" || props.type == "Dashbord" || props.type == "Users" || props.type == "Edit"? styles.nav__black : ""} 
         ${buttonMenu && styles.parent} ${props.type == "Home" || props.type == "Login" && styles.nav__fixed}`}
         >
             {

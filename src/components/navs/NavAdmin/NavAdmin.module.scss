@@ -1,0 +1,26 @@
+.nav__list {
+    background-color: black;
+    padding: 50px 20px;
+   
+
+    li {
+        padding-bottom: 20px;
+        border-bottom: 1px solid white;
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: white;
+            margin-top: 20px;
+
+            p {
+                margin-left: 5px;
+            }
+        }
+
+        a:hover {
+            color: #e50914;
+        }
+    }
+
+}

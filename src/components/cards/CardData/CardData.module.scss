@@ -1,0 +1,23 @@
+.div__element {
+    background-color: rgb(233, 231, 231);
+    padding: 20px 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .title {
+        flex-grow: 1;
+        margin-left: 300px;
+    }
+    
+
+    .div__icons {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+}

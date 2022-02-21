@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Movies.module.scss';
+import withAuthAdmin from '../../../HOC/withAuthAdmin';
 import NavAccount from '../../../components/navs/NavAccount/NavAccount';
 import NavAdmin from '../../../components/navs/NavAdmin/NavAdmin';
 import CardData from '../../../components/cards/CardData/CardData';
 import MainAdmin from '../../../components/mains/MainAdmin/MainAdmin';
-
 
 
 function Movies(props) {
@@ -19,4 +19,4 @@ function Movies(props) {
     );
 }
 
-export default Movies;
+export default withAuthAdmin(Movies);

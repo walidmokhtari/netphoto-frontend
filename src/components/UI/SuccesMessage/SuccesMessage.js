@@ -5,7 +5,12 @@ import Link from "next/link";
 function SuccesMessage(props) {
     return (
         <div className={styles.div__succesMessage}>
-            <p>{props.message}. <Link href="/">Retour a l&apos;accueil</Link></p>
+            {
+                props.type == "Admin" ?
+                 <p>{props.message}.</p>
+                :
+                 <p>{props.message}. <Link href="/">Retour a l&apos;accueil</Link></p>
+            }
         </div>
     );
 }

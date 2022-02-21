@@ -79,6 +79,12 @@ function NavAccount(props) {
                     ""
                 }
                 {
+                props.type == "Edit" || props.type == "Users" || props.type == "Dashbord"?
+                    <Button value="Se déconnecter" href="/login"></Button>
+                        :
+                    ""
+                }
+                {
                     props.type == "Home" ?
                         <Button value="S'identifier" href="/login"></Button>
                     :

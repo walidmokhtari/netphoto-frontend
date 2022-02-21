@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './AddMovie.module.scss';
 import NavAccount from '../../../components/navs/NavAccount/NavAccount';
 import NavAdmin from '../../../components/navs/NavAdmin/NavAdmin';
-
+import withAuthAdmin from '../../../HOC/withAuthAdmin';
 import { getQueyries } from '../../../graphql/queries/queyries';
 import { useQuery } from "@apollo/react-hooks";
 
@@ -29,8 +29,8 @@ function AddMovie(props) {
                         <h1>Ajout des films</h1>
                     </div>
                     <form className={styles.form}>
-                        <label>Titre: </label>
-                        <input type="text"></input>
+                        <label >Titre: </label>
+                        <input type="text" ></input>
                         <label>Description: </label>
                         <textarea cols="30" rows="15"></textarea>
                         <label>Lien vers l&apos;image: </label>
@@ -58,4 +58,4 @@ function AddMovie(props) {
     );
 }
 
-export default AddMovie;
+export default withAuthAdmin(AddMovie);

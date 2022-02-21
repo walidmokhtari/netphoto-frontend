@@ -5,6 +5,7 @@ import authService from '../../services/auth.service';
 import ErrorMessage from '../../components/UI/ErrorMessage/ErrorMessage';
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
 import Logo from '../../../public/logo_n.png';
+import WithOutAuthAdmin from '../../HOC/withOutAuthAdmin';
 
 function Admin(props) {
     const router = useRouter();
@@ -63,4 +64,4 @@ function Admin(props) {
     );
 }
 
-export default Admin;
+export default WithOutAuthAdmin(Admin);

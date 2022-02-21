@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MainAdmin.module.scss';
 import CardData from '../../cards/CardData/CardData';
 import { AddCircle } from '@material-ui/icons';
+import Router, { useRouter } from 'next/router';
 
 import { getQueyries } from '../../../graphql/queries/queyries';
 import { useQuery } from "@apollo/react-hooks";
@@ -9,6 +10,7 @@ import { useQuery } from "@apollo/react-hooks";
 function MainAdmin(props) {
 
     const { loading, error, data } = useQuery(getQueyries);
+    const router = useRouter();
 
     if (loading) {
         return "loading...";
@@ -20,12 +22,24 @@ function MainAdmin(props) {
         return null;
     }
     //console.log(data)
+    const goToAddMovie = () => {
+        router.push('/admin/addMovie')
+    }
+
+    const goToAddCategorie = () => {
+        router.push('/admin/addCategorie')
+    }
 
     return (
         <div className={styles.div__main__right}>
             <div className={styles.div__title}>
                 <h1>{props.title}</h1>
-                <a href=""><AddCircle></AddCircle><p>Ajouter</p></a>
+                {
+                    props.type == "Movie" ?
+                        <div className={styles.a} onClick={goToAddMovie}><AddCircle></AddCircle><p>Ajouter</p></div>
+                    :
+                        <div className={styles.a} onClick={goToAddCategorie}><AddCircle></AddCircle><p>Ajouter</p></div>
+                }
             </div>
             <div className={styles.div__elements}>
                 <div className={styles.div__key}>

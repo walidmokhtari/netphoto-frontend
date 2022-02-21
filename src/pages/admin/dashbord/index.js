@@ -6,6 +6,7 @@ import { PersonRounded } from '@material-ui/icons';
 import { LocalMoviesRounded } from '@material-ui/icons';
 import { CategoryRounded } from '@material-ui/icons';
 import { DataUsageRounded } from '@material-ui/icons';
+import withAuthAdmin from '../../../HOC/withAuthAdmin';
 import Link from 'next/link';
 import NavAdmin from '../../../components/navs/NavAdmin/NavAdmin';
 
@@ -50,4 +51,4 @@ function Dashbord(props) {
     );
 }
 
-export default Dashbord;
+export default withAuthAdmin(Dashbord);

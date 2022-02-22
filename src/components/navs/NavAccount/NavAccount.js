@@ -50,7 +50,7 @@ function NavAccount(props) {
                     <nav className={styles.nav__links}>
                         <a href="#" className={styles.nav__link}><span>Accueil</span></a>
                         <a href="#" className={styles.nav__link}>Films</a>
-                        <Link href="/account/wishlist/" className={styles.nav__link}>Wishlist</Link>
+                        <Link href="/account/wishlist" className={styles.nav__link}>Wishlist</Link>
                     </nav>
                     :
                     ""

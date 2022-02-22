@@ -57,5 +57,17 @@ export default {
           body: JSON.stringify(user),
       })
       .then(res => res.json())
-  },
+    },
+
+    updateWishListUser(token, user) {
+      return fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/users/wishlist-user`, {
+          method: "PATCH",
+          headers: {
+              "authorization": token,
+              "content-type":"application/json"
+          },
+          body: JSON.stringify(user),
+      })
+      .then(res => res.json())
+    },
 }

@@ -16,7 +16,6 @@ function Account(props) {
     const router = useRouter();
     const {isShown, shown, pass} = useContext(CartContext);
     const { loading, error, data } = useQuery(getQueyries);
-
     
     if (loading) {
         return "loading...";
@@ -27,7 +26,6 @@ function Account(props) {
         alert(error)
         return null;
     }
-
     
     const token = localStorage.getItem("token");
     if (token != null) {

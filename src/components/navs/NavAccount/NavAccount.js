@@ -18,19 +18,17 @@ function NavAccount(props) {
     const {shown, logout} = useContext(CartContext);
 
 
-    if (props.type == "Account" || props.type == "Profil") {
-        const transitionNav  = () => {
-            window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
-        };
-
-        const handleClick = () => {
-            buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
-        }
-
-    } 
-
     
-    
+    const transitionNav  = () => {
+        window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
+    };
+    const handleClick = () => {
+        buttonMenu ? setButtonMenu(false) : setButtonMenu(true);
+    }
+    if (process.browser) {
+        document.addEventListener("scroll", transitionNav);
+    }
+
 
     return (
         <div 
@@ -52,7 +50,7 @@ function NavAccount(props) {
                     <nav className={styles.nav__links}>
                         <a href="#" className={styles.nav__link}><span>Accueil</span></a>
                         <a href="#" className={styles.nav__link}>Films</a>
-                        <a href="#" className={styles.nav__link}>Wishlist</a>
+                        <a href="/account/wishlist/" className={styles.nav__link}>Wishlist</a>
                     </nav>
                     :
                     ""
@@ -78,12 +76,14 @@ function NavAccount(props) {
                     :
                     ""
                 }
+                
                 {
-                props.type == "Edit" || props.type == "Users" || props.type == "Dashbord"?
-                    <Button value="Se déconnecter" onclick={true}></Button>
+                        props.type == "Edit" || props.type == "Users" || props.type == "Dashbord"?
+                            <Button value="Se déconnecter" onclick={true}></Button>
                         :
-                    ""
+                            ""
                 }
+                
                 {
                     props.type == "Home" ?
                         <Button value="S'identifier" href="/login"></Button>

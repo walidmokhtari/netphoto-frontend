@@ -1,0 +1,46 @@
+.div__wishlist {
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+
+    .div__main {
+        height: 100vh;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .row__content {
+            
+            .row__image {
+                width: 350px;
+                height: 200px;
+                padding: 0.2rem;
+            }
+
+            .row__info {
+                display: none;
+                svg {
+                    font-size: 2.5rem;
+                }
+                .row__buttons {
+                    .row__buttons__right {
+                        margin-left: 100px;
+                    }
+                }
+
+                .row__more {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    .row__more__2 {
+                        padding-bottom: 2rem;
+                    }
+                }
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

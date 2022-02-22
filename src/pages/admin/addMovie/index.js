@@ -16,7 +16,6 @@ function AddMovie(props) {
     const router = useRouter();
     const [movie, setMovie] = useState({});
     const [array, setArray] = useState([]);
-    console.log(movie);
 
 
     useEffect(() => {
@@ -38,13 +37,12 @@ function AddMovie(props) {
             categories: array
         }
     });
+    
+    const loadings = loading || loading2;
+    if (loadings) return (<p>loading...</p>);
 
-        const loadings = loading || loading2;
-        if (loadings) return (<p>loading...</p>)
     
 
-    
-     
 
     return (
         <div className={styles.div__add__movie}>

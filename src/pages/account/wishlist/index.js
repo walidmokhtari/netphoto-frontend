@@ -9,7 +9,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 function Wishlist(props) {
     const [user, setUser] = useState({});
-    const { loading, error, data } = useQuery(getQueyries);
+    
 
     useEffect(() => {    
         const token = localStorage.getItem("token");
@@ -22,6 +22,7 @@ function Wishlist(props) {
     }, []);
 
    
+    const { loading, error, data } = useQuery(getQueyries);
 
     if (loading) {
         return "loading...";
@@ -40,7 +41,7 @@ function Wishlist(props) {
             <div className={styles.div__main}>
                 {
                 data.getMovies.map((movie)=> (
-                    user.wishlist.map((id) => (
+                    user.wishlist?.map((id) => (
                         movie.id == id ? (
                             <div key={movie.id} className={styles.row__content}>
                                 <img src={movie.image} className={styles.row__image} alt={movie.title}></img>

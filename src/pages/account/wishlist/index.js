@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Wishlist.module.scss';
 import NavAccount from '../../../components/navs/NavAccount/NavAccount';
-import { PlayCircleFilledRounded} from '@material-ui/icons';
+import { PlayCircleFilledRounded, ThumbUpAltOutlined} from '@material-ui/icons';
 import authService from '../../../services/auth.service';
 
 import { getQueyries } from "../../../graphql/queries/queyries";
@@ -49,15 +49,9 @@ function Wishlist(props) {
                                     <div className={styles.row__buttons}>
                                         <div className={styles.row__buttons__left}>
                                             <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                        </div>
-                                        <div className={styles.row__buttons__right}>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
+                                            <ThumbUpAltOutlined className={styles.like}></ThumbUpAltOutlined>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         )

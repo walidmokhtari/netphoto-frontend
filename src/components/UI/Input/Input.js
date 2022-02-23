@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Input.module.scss';
 
 const Input = (props) => {
+
     return (
         <>
         <label>{props.label}</label>
@@ -13,7 +14,9 @@ const Input = (props) => {
             value={props.value}
             placeholder={props.placeholder}
             required={props.required}
-            onChange={props.onChange}      
+            onChange={props.onChange} 
+            minLength={props.minLength}
+            pattern={props.pattern}
         />
         </>
     );

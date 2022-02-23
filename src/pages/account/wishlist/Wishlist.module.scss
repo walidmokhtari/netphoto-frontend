@@ -11,35 +11,32 @@
         flex-wrap: wrap;
 
         .row__content {
-            
+            transition: 0.7s ease;
             .row__image {
                 width: 350px;
                 height: 200px;
                 padding: 0.2rem;
             }
-
-            .row__info {
-                display: none;
+            .row__buttons__left {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                z-index: 5;
+                
                 svg {
-                    font-size: 2.5rem;
+                    font-size: 5rem;
+                    padding-right: 10px;
+                    padding-bottom: 20px;
+                    color: white;
                 }
-                .row__buttons {
-                    .row__buttons__right {
-                        margin-left: 100px;
-                    }
-                }
-
-                .row__more {
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    .row__more__2 {
-                        padding-bottom: 2rem;
-                    }
+                .like {
+                    color: red;
                 }
             }
+        
             &:hover {
                 cursor: pointer;
+                transform: scale(1.1);
             }
         }
     }

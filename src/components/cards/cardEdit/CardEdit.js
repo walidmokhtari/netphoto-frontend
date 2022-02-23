@@ -46,6 +46,7 @@ const CardEdit = (props) =>{
                             type={props.type} 
                             placeholder={props.page == "perso" ? "Prénom" : ""} 
                             value={props.page == "email" ? localStorage.getItem("email") : null}
+                            required={true}
                             onChange={ (e) => {
                                 props.page == "perso" ?
                                     setUser({...user,firstName: e.target.value})
@@ -60,6 +61,9 @@ const CardEdit = (props) =>{
                 <input 
                     type={props.type} 
                     placeholder={props.page == "perso" ? "Nom" : props.placeHolder}
+                    required={true}
+                    minLength={props.minLength}
+                    pattern={props.pattern}
                     onChange={ (e) => {
                         props.page == "email" ?
                             setUser({...user,email: e.target.value})
@@ -78,21 +82,20 @@ const CardEdit = (props) =>{
                     props.page != "perso"  ?
                         <input 
                             type={props.type} 
-                            placeholder={`Confirmation du ${props.placeHolder}`}>
+                            placeholder={`Confirmation du ${props.placeHolder}`}
+                            required={true}>
                         </input>
                     :
-                        ""
-                    
+                        ""  
                 }
                 <div className={styles.div__buttons}>
                     <input type="submit" value="Enregistrer" className={styles.button1}></input>
-                    <input type="submit" value="Annuler" className={styles.button2}></input>
                 </div>
                 {
-                        success ? 
-                            <SuccesMessage message={props.msgSucces}></SuccesMessage>
-                        :
-                            ""
+                    success ? 
+                        <SuccesMessage message={props.msgSucces}></SuccesMessage>
+                    :
+                        ""
                 }
             </form>
         </div>

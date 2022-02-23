@@ -35,10 +35,14 @@ function AddCategorie(props) {
                     <div className={styles.div__title}>
                         <h1>Ajout des catégories</h1>
                     </div>
-                    <form className={styles.form}>
+                    <form className={styles.form} onSubmit={save}>
                         <label>Titre: </label>
-                        <input type="text" onChange={(e) => setTitle({...title, title: e.target.value})}></input>
-                        <input type="submit" value="Ajouter" onClick={save}></input>
+                        <input 
+                            type="text" 
+                            required={true}
+                            onChange={(e) => setTitle({...title, title: e.target.value})}>
+                        </input>
+                        <input type="submit" value="Ajouter" ></input>
                     </form>
                     {
                         data ? 

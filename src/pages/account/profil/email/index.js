@@ -13,7 +13,8 @@ function index(props) {
                 type="email" 
                 page="email" 
                 title="Modifier mon adresse e-mail" 
-                msgSucces="Votre adresse e-mail a été modifié avec succès">
+                msgSucces="Votre adresse e-mail a été modifié avec succès"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$">
             </CardEdit>
         </div>
     );

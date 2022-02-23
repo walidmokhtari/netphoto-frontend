@@ -14,19 +14,20 @@ function RowAccount(props) {
     const { loading, error, data } = useQuery(getQueyries);
     const [wishlist, setWishList] = useState([]);
     const [user, setUser] = useState({});
-   
-    
 
     useEffect(() => {    
         const token = localStorage.getItem("token");
         
-        //req.wishlist = wishlist;
-        authService
-          .updateWishListUser(token,{wishlist: wishlist})
-            .then((data) => {
-                setUser(data.user);   
-          })
-          .catch((err) => console.log(err));
+        if (wishlist.length != 0 ) {
+            authService
+            .updateWishListUser(token,{wishlist: wishlist})
+              .then((data) => {
+                  setUser(data.user); 
+                  setWishList(data.user.wishlist)  
+            })
+            .catch((err) => console.log(err));
+        }
+        
         }, [wishlist]);
 
         if (loading) {
@@ -52,7 +53,15 @@ function RowAccount(props) {
                                     <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
                                     <div className={styles.row__buttons__left}>
                                         <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                        <p onClick={() => {setWishList([...wishlist,  movie.id]); alert("Le film a bien été ajouté a votre wishlist"); return "style=color:red;"}}><ThumbUpAltOutlined></ThumbUpAltOutlined></p>
+                                        <p onClick={() => {
+                                            alert("Le film a bien été ajouté a votre wishlist");
+                                            wishlist.indexOf(movie.id) == -1 ? 
+                                                setWishList([...wishlist,  movie.id])
+                                            :
+                                                wishlist.splice(wishlist.indexOf(categorie.id),1); return wishlist;
+                                            
+                                        }}>
+                                        <ThumbUpAltOutlined></ThumbUpAltOutlined></p>
                                     </div>
                                 </div>
                             )

@@ -47,6 +47,8 @@ function Login(props) {
                             name="email"
                             placeholder="E-mail ou numéro de téléphone"
                             required={true}
+                            minLength="2"
+                            pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}"
                             onChange={(e) => {
                                 setUser({ ...user, email: e.target.value });
                             }}
@@ -57,6 +59,7 @@ function Login(props) {
                             name="password"
                             placeholder="Mot de passe"
                             required={true}
+                            minLength="8"
                             onChange={(e) => {
                                setUser({ ...user, password: e.target.value });
                             }}

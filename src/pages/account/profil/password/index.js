@@ -13,7 +13,8 @@ function index(props) {
                 type="password"
                 page="password" 
                 title="Modifier mon mot de passe" 
-                msgSucces="Votre mot de passe a été modifié avec succès">
+                msgSucces="Votre mot de passe a été modifié avec succès"
+                minLength="8">
             </CardEdit>
         </div>
     );

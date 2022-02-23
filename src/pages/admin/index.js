@@ -41,8 +41,19 @@ function Admin(props) {
                 </div>
                 <div className={styles.div__bottom}>
                     <form className={styles.div__form} onSubmit={(e) => handleSubmit(e)}>
-                        <input type="email" className={styles.input__text} placeholder="E-mail" onChange={(e) => {setUser({ ...user, email: e.target.value });}}></input>
-                        <input type="password" className={styles.input__text} placeholder="Mot de passe" onChange={(e) => {setUser({ ...user, password: e.target.value });}}></input>
+                        <input 
+                            type="email" 
+                            className={styles.input__text}
+                            required={true}
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$"
+                            placeholder="E-mail" onChange={(e) => {setUser({ ...user, email: e.target.value });}}>
+                        </input>
+                        <input 
+                            type="password" 
+                            className={styles.input__text}
+                            minLength="8" 
+                            placeholder="Mot de passe" onChange={(e) => {setUser({ ...user, password: e.target.value });}}>
+                        </input>
                         <input type="submit" value="S&apos;identifier" className={styles.input__submit}></input>
                     </form>
                     <div className={styles.div__logo}>

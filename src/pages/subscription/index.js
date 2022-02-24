@@ -5,7 +5,7 @@ import stripeService from "../../services/stripe.service";
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
 import { Done } from '@material-ui/icons';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK);
+const stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PK}`);
 
 function Subscription(props) {
 

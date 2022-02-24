@@ -1,7 +1,11 @@
 import {React, useState} from 'react';
 import styles from './Subscription.module.scss';
+import { loadStripe } from "@stripe/stripe-js";
+import stripeService from "../../services/stripe.service";
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
 import { Done } from '@material-ui/icons';
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK);
 
 function Subscription(props) {
 
@@ -23,6 +27,23 @@ function Subscription(props) {
         setFontLeftRed(false);
         setFontRightRed(true);
     }
+
+    const handleConfirmation = async () => {
+        const token = localStorage.getItem('token');
+        const payload = {
+          total: divClick1 ? 1799: 1346,
+          subscription: divClick1 ? "Premium" : "Standard"
+        }
+        try {
+          const stripe = await stripePromise;
+          const response = await stripeService.createSession(token, payload);
+          await stripe.redirectToCheckout({
+            sessionId: response.id,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
     return (
         <div className={styles.div__subscription}>
@@ -64,7 +85,7 @@ function Subscription(props) {
                     </div>
                 </div>
                 <div className={styles.div__button}>
-                    <button className={styles.button}>Suivant</button>
+                    <button className={styles.button} onClick={handleConfirmation}>Suivant</button>
                 </div>
             </div>
         </div>

@@ -25,7 +25,6 @@ function Login(props) {
                     setErrorMessage(data.message)
                     return false;
                 }
-
                 localStorage.setItem("token", data.token);
                 router.push("/account");
             })

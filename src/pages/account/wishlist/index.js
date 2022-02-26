@@ -9,6 +9,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 function Wishlist(props) {
     const [user, setUser] = useState({});
+    console.log(user)
     
 
     useEffect(() => {    
@@ -41,7 +42,7 @@ function Wishlist(props) {
             <div className={styles.div__main}>
                 {
                 data.getMovies.map((movie)=> (
-                    user.wishlist?.map((id) => (
+                    user.user?.wishlist?.map((id) => (
                         movie.id == id ? (
                             <div key={movie.id} className={styles.row__content}>
                                 <img src={movie.image} className={styles.row__image} alt={movie.title}></img>

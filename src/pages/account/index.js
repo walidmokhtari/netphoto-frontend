@@ -31,9 +31,10 @@ function Account(props) {
     if (token != null) {
         authService.getUser(token)
         .then((data) => {
-            localStorage.setItem('firstName', data.firstName);
-            localStorage.setItem('lastName', data.lastName);
-            localStorage.setItem('email', data.email);
+            localStorage.setItem('firstName', data.user.firstName);
+            localStorage.setItem('lastName', data.user.lastName);
+            localStorage.setItem('email', data.user.email);
+            localStorage.setItem('subscription', data.user.subscription);
         })
         .catch((err) => {
             console.log(err);

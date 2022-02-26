@@ -1,0 +1,20 @@
+.div__confirmation {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+
+    .div__main {
+        margin-top: 200px;
+        width: 100%;
+        text-align: center;
+        color: green;
+        a {
+            color: rgb(136, 4, 136);
+        }
+        svg {
+            font-size: 5.0rem;
+            transition: ease-in-out 0.7s;
+        }
+    }
+}

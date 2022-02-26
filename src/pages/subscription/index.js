@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 import styles from './Subscription.module.scss';
+import WithOutSubscription from '../../HOC/withOutSubscription';
 import { loadStripe } from "@stripe/stripe-js";
 import stripeService from "../../services/stripe.service";
 import NavAccount from '../../components/navs/NavAccount/NavAccount';
@@ -47,7 +48,7 @@ function Subscription(props) {
 
     return (
         <div className={styles.div__subscription}>
-            <NavAccount></NavAccount>
+            <NavAccount type="Subscribe"></NavAccount>
             <div className={styles.div__container}>
                 <div className={styles.div__title}>
                     <h1>Sélectionnez le forfait qui vous convient</h1>
@@ -92,4 +93,4 @@ function Subscription(props) {
     );
 }
 
-export default Subscription;
+export default WithOutSubscription(Subscription);

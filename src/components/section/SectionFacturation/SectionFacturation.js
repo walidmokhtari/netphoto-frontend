@@ -14,7 +14,7 @@ function SectionFacturation(props) {
                     <div className={styles.div__email}>
                         <p>{localStorage.getItem("email")}</p>
                         <p className={styles.p__gray}>Mot de passe : ********</p>
-                        <p className={styles.p__gray}>Téléphone : 07 85 31 06 43</p>
+                        <p className={styles.p__gray}>Téléphone : 01 23 45 67 89</p>
                     </div>
                     <div className={styles.div__email__link}>
                         <Link href="/account/profil/email">Modifier l&apos;adresse e-mail</Link>
@@ -24,7 +24,7 @@ function SectionFacturation(props) {
                 </div>
                 <div className={styles.div__parent__paiement}>
                     <div className={styles.div__paiement}>
-                        <p>•••• •••• •••• 6997</p>
+                        <p>•••• •••• •••• 4242</p>
                         <p>Prochaine date de facturation : 8 mars 2022.</p>
                     </div>
                     <div className={styles.div__paiement__link}>

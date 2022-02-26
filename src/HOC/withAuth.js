@@ -13,7 +13,12 @@ const withAuth = (WrappedComponent) => {
           .verifyToken(token)
           .then((data) => {
             if (data.verify) {
-              setVerify(true);
+              if (data.subscription != "") {
+                setVerify(true);
+              } else {
+                router.push("/subscription");
+              }
+             
             } else {
               localStorage.removeItem("token");
               router.push("/");

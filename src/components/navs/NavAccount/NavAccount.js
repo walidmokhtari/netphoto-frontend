@@ -78,7 +78,7 @@ function NavAccount(props) {
                 }
                 
                 {
-                        props.type == "Edit" || props.type == "Users" || props.type == "Dashbord"?
+                        props.type == "Edit" || props.type == "Users" || props.type == "Dashbord" || props.type == "Subscribe" ?
                             <Button value="Se déconnecter" onclick={true}></Button>
                         :
                             ""

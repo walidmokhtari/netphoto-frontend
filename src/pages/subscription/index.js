@@ -32,7 +32,7 @@ function Subscription(props) {
     const handleConfirmation = async () => {
         const token = localStorage.getItem('token');
         const payload = {
-          total: divClick1 ? 1799: 1346,
+          total: divClick1 ? 6000: 3000,
           subscription: divClick1 ? "Premium" : "Standard"
         }
         try {
@@ -68,8 +68,8 @@ function Subscription(props) {
                     </div>
                     <div className={styles.div__grid}>
                         <div className={`${styles.div__grid__child} ${styles.child__left}`}>Abonnement mensuel</div>
-                        <div className={`${styles.div__grid__child} ${styles.child__right} ${fontLeftRed && styles.child__text__red}`}>13.46 €</div>
-                        <div className={`${styles.div__grid__child} ${styles.child__right} ${fontRightRed && styles.child__text__red}`}>17,99 €</div>
+                        <div className={`${styles.div__grid__child} ${styles.child__right} ${fontLeftRed && styles.child__text__red}`}>30 €</div>
+                        <div className={`${styles.div__grid__child} ${styles.child__right} ${fontRightRed && styles.child__text__red}`}>60 €</div>
                         <div className={`${styles.div__grid__child} ${styles.child__left}`}>Qualité vidéo</div>
                         <div className={`${styles.div__grid__child} ${styles.child__right} ${fontLeftRed && styles.child__text__red}`}>Meilleure</div>
                         <div className={`${styles.div__grid__child} ${styles.child__right} ${fontRightRed && styles.child__text__red}`}>Optimale</div>

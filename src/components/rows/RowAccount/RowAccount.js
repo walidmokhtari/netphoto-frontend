@@ -14,15 +14,21 @@ function RowAccount(props) {
     const { loading, error, data } = useQuery(getQueyries);
     const [wishlist, setWishList] = useState([]);
     const [user, setUser] = useState({});
+    const token = localStorage.getItem("token");
+
+    authService.getUser(token)
+        .then((data) => {
+            setUser(data.user);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 
     useEffect(() => {    
-        const token = localStorage.getItem("token");
-        
         if (wishlist.length != 0 ) {
             authService
             .updateWishListUser(token,{wishlist: wishlist})
               .then((data) => {
-                  setUser(data.user); 
                   setWishList(data.user.wishlist)  
             })
             .catch((err) => console.log(err));
@@ -39,7 +45,6 @@ function RowAccount(props) {
           return null;
         }
 
-
     return (
         <div className={styles.row}>
             <h2 className={styles.row__title}>{props.title}</h2>
@@ -47,27 +52,51 @@ function RowAccount(props) {
                 {
                     data.getMovies.map((movie) => (
                         movie.categories.map((categorie) => (
-                            categorie.title == props.title ? 
-                            (
-                                <div key={movie.id} className={styles.row__content}>
-                                    <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
-                                    <div className={styles.row__buttons__left}>
-                                        <PlayCircleFilledRounded></PlayCircleFilledRounded>
-                                        <p onClick={() => {
-                                            alert("Le film a bien été ajouté a votre wishlist");
-                                            wishlist.indexOf(movie.id) == -1 ? 
-                                                setWishList([...wishlist,  movie.id])
-                                            :
-                                                wishlist.splice(wishlist.indexOf(categorie.id),1); return wishlist;
-                                            
-                                        }}>
-                                        <ThumbUpAltOutlined></ThumbUpAltOutlined></p>
+                            user.subscription == "Premium" ? (
+                                categorie.title == props.title ? 
+                                (
+                                    <div key={movie.id} className={styles.row__content}>
+                                        <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
+                                        <div className={styles.row__buttons__left}>
+                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
+                                            <p onClick={() => {
+                                                alert("Le film a bien été ajouté a votre wishlist");
+                                                wishlist.indexOf(movie.id) == -1 ? 
+                                                    setWishList([...wishlist,  movie.id])
+                                                :
+                                                    wishlist.splice(wishlist.indexOf(categorie.id),1); return wishlist;
+
+                                            }}>
+                                            <ThumbUpAltOutlined></ThumbUpAltOutlined></p>
+                                        </div>
                                     </div>
-                                </div>
+                                )
+                                :
+                                ""
                             )
                             :
-                            ""
+                            (
+                                (categorie.title == props.title && movie.publicationDate.indexOf("2022") == -1) ? 
+                                (
+                                    <div key={movie.id} className={styles.row__content}>
+                                        <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
+                                        <div className={styles.row__buttons__left}>
+                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
+                                            <p onClick={() => {
+                                                alert("Le film a bien été ajouté a votre wishlist");
+                                                wishlist.indexOf(movie.id) == -1 ? 
+                                                    setWishList([...wishlist,  movie.id])
+                                                :
+                                                    wishlist.splice(wishlist.indexOf(categorie.id),1); return wishlist;
 
+                                            }}>
+                                            <ThumbUpAltOutlined></ThumbUpAltOutlined></p>
+                                        </div>
+                                    </div>
+                                )
+                                :
+                                ""
+                            )
                         ))
                     ))
                 }

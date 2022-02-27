@@ -1,7 +1,7 @@
 # Project by : 
-    - First name: MOKHTARI
-    - Last name: Walid
-    - Production: https://netflix-phi-one.vercel.app/
+    * First name: Walid
+    * Last name: MOKHTARI
+    * Production: https://netflix-phi-one.vercel.app/
 
 # Features : 
     * Subscription, 30euros for 'Standard' subscription and 60euros for 'Premium'.

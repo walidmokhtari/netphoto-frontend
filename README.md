@@ -21,5 +21,5 @@
     * Email : admin@ynov.com
     * Password : test0606
 
-
+(https://netflix-phi-one.vercel.app/admin)
 

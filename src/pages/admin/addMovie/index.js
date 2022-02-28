@@ -32,7 +32,7 @@ function AddMovie(props) {
             title: movie.title,
             description: movie.description,
             image: movie.image,
-            video: "test.mp4",
+            video: movie.video,
             type: "Film",
             publicationDate: movie.publicationDate,
             categories: array

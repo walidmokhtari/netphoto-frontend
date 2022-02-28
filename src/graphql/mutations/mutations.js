@@ -18,26 +18,3 @@ export const Movies = gql`
             }
         },
 `
-
-/*const [save, {loading2, error2, data2}] = useMutation(Movies, {
-        variables: {
-            title: movie.title,
-            description: movie.description,
-            image: movie.image,
-            video: movie.video,
-            type: movie.type,
-            publicationDate: movie.publicationDate,
-            categories: movie.categories      
-        }
-    });
-
-    if (loading2) {
-        return "loading...";
-    }
-
-    if (error2) {
-        console.log(error);
-        alert(error)
-        return null;
-    }
-    */

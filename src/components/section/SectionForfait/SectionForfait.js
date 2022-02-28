@@ -7,13 +7,9 @@ function SectionForfait(props) {
             <div className={styles.div__details__left}>
                 <h1>Détails du forfait</h1>
             </div>
-            <div className={styles.div__parent_mr}>
-                <div className={styles.div__details__middle}>
-                    <h1>{localStorage.getItem("subscription")}</h1>
-                </div>
-                <div className={styles.div__details__right}>
-                    <a href="#">Détails du forfait</a>
-                </div>
+            <div className={styles.div__details__right}>
+                <h1>{localStorage.getItem("subscription")}</h1>
+                <a href="#">Détails du forfait</a>
             </div>
             
         </section>

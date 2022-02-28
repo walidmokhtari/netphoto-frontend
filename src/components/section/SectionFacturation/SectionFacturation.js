@@ -1,18 +1,19 @@
 import react from "react";
 import styles from "./SectionFacturation.module.scss"
 import Link from 'next/link';
+import VisaImage from '../../../../public/visa.svg'
 
 function SectionFacturation(props) {
     return (
-        <section className={styles.div__parent}>
-            <div className={styles.div__parent__left}>
+        <section className={styles.div__abonnement}>
+            <div className={styles.div__left}>
                 <h1>Abonnement et facturation</h1>
                 <button type="button">Annuler l&apos;abonnement</button>
             </div>
-            <div className={styles.div__parent__right}>
+            <div className={styles.div__right}>
                 <div className={styles.div__parent__email}>
                     <div className={styles.div__email}>
-                        <p>{localStorage.getItem("email")}</p>
+                        <p className={styles.email}>{localStorage.getItem("email")}</p>
                         <p className={styles.p__gray}>Mot de passe : ********</p>
                         <p className={styles.p__gray}>Téléphone : 01 23 45 67 89</p>
                     </div>
@@ -24,7 +25,10 @@ function SectionFacturation(props) {
                 </div>
                 <div className={styles.div__parent__paiement}>
                     <div className={styles.div__paiement}>
-                        <p>•••• •••• •••• 4242</p>
+                        <div className={styles.div__icon}>
+                            <p><img src={VisaImage.src}></img></p>
+                            <p className={styles.visa__card}>•••• •••• •••• 4242</p>
+                        </div>
                         <p>Prochaine date de facturation : 8 mars 2022.</p>
                     </div>
                     <div className={styles.div__paiement__link}>
@@ -35,12 +39,8 @@ function SectionFacturation(props) {
                     </div>
                 </div>
                 <div className={styles.div__parent__link}>
-                    <div>
-                    </div>
-                    <div className={styles.div__link}>
                         <a href="#">Utiliser une carte cadeau ou un code de promotion</a>
                         <a href="#">Où acheter des cartes cadeaux ?</a>
-                    </div>
                 </div>
             </div>
         </section>

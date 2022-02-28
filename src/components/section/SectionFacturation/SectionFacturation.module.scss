@@ -1,121 +1,134 @@
-.div__parent {
+.div__abonnement {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     margin-top: 20px;
-    padding-left: 50px;
-}
+    border-bottom: solid 1px rgb(172, 170, 170);
 
-.div__parent__left {
-    display: flex;
-    flex-direction: column;
-    padding-right: 20px;
-    h1 {
-        font-weight: bold;
-        font-size: 20px;
-        color: rgb(107, 107, 107);
+    .div__left {
+        display: block;
+
+        h1 {
+            color: #757575;
+        }
+
+        button {
+            margin-top: 10px;
+            font-size: 13px;
+            padding: 6px 2em;
+        }
     }
+
+    .div__right {
+        display: block;
+        flex-grow: 1;
+        padding-left: 30px;
     
-    button {
-        width: 90%;
-        margin-top: 15px;
-        font-size: 20px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border-radius: 3px solid none;
-        background-color: rgb(204, 204, 204) solid;
-        cursor: pointer;
+        .div__parent__email {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(230, 226, 226);
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+            .div__email {
+                .email {
+                    font-weight: bold;
+                    color: black;
+                }
+                p {
+                    margin-bottom: 20px;
+                    color: #757575;
+                    font-size: 1.0rem;
+                }
+            }
+
+            .div__email__link {
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+
+                @media screen and (max-width: 600px) {
+                    text-align: start;
+                }
+
+                a {
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    color: #0073e6;
+                }
+            }
+        }
+
+        .div__parent__paiement {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(230, 226, 226);
+            margin-top: 20px;
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
+
+            .div__paiement {
+                p {
+                    margin-bottom: 20px;
+                    font-size: 1.0rem;
+                }
+               
+                .div__icon {
+                    display: flex;
+                    flex-direction: row;
+
+                    img {
+                        width: 30px;
+                    }
+
+                    .visa__card {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .div__paiement__link {
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+
+                @media screen and (max-width: 600px) {
+                    text-align: start;
+                }
+
+                a {
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    color: #0073e6;
+                }
+            }
+
+        }
+
+        .div__parent__link {
+            display: flex;
+            flex-direction: column;
+            text-align: end;
+            margin-top: 20px;
+
+            @media screen and (max-width: 600px) {
+                text-align: start;
+            }
+
+            a {
+                margin-bottom: 20px;
+                font-weight: 600;
+                color: #0073e6;
+            }
+
+        }
+
     }
-}
 
-.div__parent__right {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.div__parent__email {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: solid 1px rgb(230, 230, 230);
-}
-
-.div__email {
-    display: flex;
-    flex-direction: column;
-
-    p {
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 23px;
-    }
-}
-
-.p__gray {
-    color: rgb(107, 107, 107);
-}
-
-.div__email__link {
-    display: flex;
-    flex-direction: column;
-    a {
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 23px;
-        color: rgb(38, 117, 207);
-        text-align: end;
-    }
-}
-
-.div__parent__paiement {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-    border-bottom: solid 1px rgb(230, 230, 230);
-}
-
-.div__paiement {
-    display: flex;
-    flex-direction: column;
-
-    p {
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 23px;
-    }
-}
-
-.div__paiement__link {
-    display: flex;
-    flex-direction: column;
-
-    a {
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 23px;
-        color: rgb(38, 117, 207);
-        text-align: end;
-    }
-}
-
-.div__parent__link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.div__link {
-    display: flex;
-    flex-direction: column;
-
-    a {
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 23px;
-        color: rgb(38, 117, 207);
-        text-align: end;
-    }
+    
 }

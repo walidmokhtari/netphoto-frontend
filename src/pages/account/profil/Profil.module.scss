@@ -1,28 +1,37 @@
 .div__profil {
     background-color: #f3f3f3;
-    padding-right: 50px;
-}
-
-.div__profil__compte {
     display: flex;
-    flex-direction: row;
-    padding-top: 100px;
-    padding-bottom: 30px;
-    border-bottom: solid 1px #797979;
-    padding-left: 50px;
+    flex-direction: column;
+    height: 120vh;
+    .div__main {
+        display: block;
+        margin-top: 120px;
+        padding-left: 100px;
+        padding-right: 100px;
+        @media screen and (max-width: 600px) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    
+        .div__title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: solid 1px rgb(172, 170, 170);
 
-    h1 {
-        font-size: 50px;
+            h1 {
+                font-size: 2.0rem;
+                font-weight: 400;
+            }
+
+            p {
+                margin-left: 20px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #555;
+            }
+        }
     }
-}
-
-.div__profil__compte__membre {
-    padding-left: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: auto;
-    text-align: center;
-    font-weight: bolder;
-    color: #3a3939;
 }
 

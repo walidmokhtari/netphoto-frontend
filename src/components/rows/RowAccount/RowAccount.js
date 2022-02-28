@@ -119,7 +119,7 @@ function RowAccount(props) {
                 popup ? (
                     <div className={`${styles.div__popup__lecture} ${popup && styles.div__popup__lecture__open}`}>
                         <button className={styles.quick__view__close} onClick={() => handleClick("")}><CloseOutlined></CloseOutlined></button>
-                        <iframe className={styles.iframe} src={videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe className={styles.iframe} src={videoLink} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                     </div>
                 ) : 
                 ""

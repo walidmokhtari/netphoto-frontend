@@ -48,9 +48,9 @@ function NavAccount(props) {
             {
                 props.type == "Account" ?
                     <nav className={styles.nav__links}>
-                        <a href="#" className={styles.nav__link}><span>Accueil</span></a>
-                        <a href="#" className={styles.nav__link}>Films</a>
-                        <Link href="/account/wishlist" className={styles.nav__link}>Wishlist</Link>
+                        <Link href="/" >Accueil</Link>
+                        <Link href="/" >Films</Link>
+                        <Link href="/account/wishlist" >Wishlist</Link>
                     </nav>
                     :
                     ""

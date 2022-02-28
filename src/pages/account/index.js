@@ -17,6 +17,7 @@ function Account(props) {
     const {isShown, shown, pass} = useContext(CartContext);
     const { loading, error, data } = useQuery(getQueyries);
     
+    
     if (loading) {
         return "loading...";
     }
@@ -42,6 +43,7 @@ function Account(props) {
     } else {
         router.push("/");
     }
+
     
     return (
         <div className={styles.div__account}>  
@@ -53,7 +55,6 @@ function Account(props) {
                     <RowAccount title={categorie.title} key={categorie.id}></RowAccount>
                 )
             }
-            
         </div>
     );
 }

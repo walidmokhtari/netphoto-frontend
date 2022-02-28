@@ -3,7 +3,7 @@ import styles from './RowAccount.module.scss';
 import authService from '../../../services/auth.service';
 import MovieImage from "../../../../public/13heures.jpg";
 import Image from "../../../../public/DontLookUp.jpg";
-import { PlayCircleFilledRounded, ThumbUpAltOutlined} from '@material-ui/icons';
+import { PlayCircleFilledRounded, ThumbUpAltOutlined, CloseOutlined} from '@material-ui/icons';
 
 import { getQueyries } from '../../../graphql/queries/queyries';
 import { useQuery } from '@apollo/client';
@@ -15,14 +15,22 @@ function RowAccount(props) {
     const [wishlist, setWishList] = useState([]);
     const [user, setUser] = useState({});
     const token = localStorage.getItem("token");
+    const [popup, setPopup] = useState(false);
+    const [videoLink, setVideoLink] = useState("");
 
-    authService.getUser(token)
+    
+    useEffect (() => {
+        authService.getUser(token)
         .then((data) => {
             setUser(data.user);
         })
         .catch((err) => {
             console.log(err);
         })
+
+
+    }, [])
+    
 
     useEffect(() => {    
         if (wishlist.length != 0 ) {
@@ -34,7 +42,7 @@ function RowAccount(props) {
             .catch((err) => console.log(err));
         }
         
-        }, [wishlist]);
+    }, [wishlist]);
 
         if (loading) {
           return "loading...";
@@ -44,6 +52,12 @@ function RowAccount(props) {
           console.log(error);
           return null;
         }
+
+        
+    function handleClick(value) {
+        setVideoLink(value);
+        popup ? setPopup(false) : setPopup(true);
+    }
 
     return (
         <div className={styles.row}>
@@ -58,7 +72,7 @@ function RowAccount(props) {
                                     <div key={movie.id} className={styles.row__content}>
                                         <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
                                         <div className={styles.row__buttons__left}>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
+                                            <PlayCircleFilledRounded onClick={() => handleClick(movie.video)}></PlayCircleFilledRounded>
                                             <p onClick={() => {
                                                 alert("Le film a bien été ajouté a votre wishlist");
                                                 wishlist.indexOf(movie.id) == -1 ? 
@@ -67,7 +81,7 @@ function RowAccount(props) {
                                                     wishlist.splice(wishlist.indexOf(categorie.id),1); return wishlist;
 
                                             }}>
-                                            <ThumbUpAltOutlined></ThumbUpAltOutlined></p>
+                                            <ThumbUpAltOutlined ></ThumbUpAltOutlined></p>
                                         </div>
                                     </div>
                                 )
@@ -81,7 +95,7 @@ function RowAccount(props) {
                                     <div key={movie.id} className={styles.row__content}>
                                         <img src={movie.image} className={styles.row__image} alt={movie.title}></img>
                                         <div className={styles.row__buttons__left}>
-                                            <PlayCircleFilledRounded></PlayCircleFilledRounded>
+                                            <PlayCircleFilledRounded onClick={() => handleClick(movie.video)}></PlayCircleFilledRounded>
                                             <p onClick={() => {
                                                 alert("Le film a bien été ajouté a votre wishlist");
                                                 wishlist.indexOf(movie.id) == -1 ? 
@@ -101,6 +115,16 @@ function RowAccount(props) {
                     ))
                 }
             </div>
+            {
+                popup ? (
+                    <div className={`${styles.div__popup__lecture} ${popup && styles.div__popup__lecture__open}`}>
+                        <button className={styles.quick__view__close} onClick={() => handleClick("")}><CloseOutlined></CloseOutlined></button>
+                        <iframe className={styles.iframe} src={videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                ) : 
+                ""
+            }
+            
         </div>
     );
 }

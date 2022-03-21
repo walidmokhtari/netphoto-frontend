@@ -16,9 +16,5 @@
 # Techo: 
     * Node js / Next js / API Rest / GraphQL / Mongo DB / Mongoose / Authentication JWT / SASS / Materiel UI (icons) / Paiement with Stripe
 
-# Back office login : 
-    * https://netflix-phi-one.vercel.app/admin
-    * Email : admin@ynov.com
-    * Password : test0606
 
 

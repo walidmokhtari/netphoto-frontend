@@ -13,7 +13,7 @@
     * A back office where an admin can add Movies and Categories
     * Responsive
 
-# Techo: 
+# Techno: 
     * Node js / Next js / API Rest / GraphQL / Mongo DB / Mongoose / Authentication JWT / SASS / Materiel UI (icons) / Paiement with Stripe
 
 
